@@ -1,6 +1,10 @@
 from flask import Flask
 
-app = Flask(__name__, static_folder='../build', template_folder='../build')
+BUILD_DIR = 'build'
+build_path = '../{}'.format(BUILD_DIR)
+
+app = Flask(__name__, static_folder=build_path)
+
 import services.static
 import services.views
 
